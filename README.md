@@ -1,4 +1,4 @@
-# PowerShellHere
+# PowerShell Here
 
 A powershell script is created to provide easy right click context menu in folders, drives.
 
