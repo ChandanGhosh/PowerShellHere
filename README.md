@@ -2,7 +2,7 @@
 
 A powershell script is created to provide easy right click context menu in folders, drives.
 
-An exe is provided for quickly execute the same script. Make sure to run as administrator and make sure powershell security is set to RemoteSigned to execute the script.
+An exe is provided for quickly execute the same script. Make sure to run as administrator and make sure powershell ExecutionPolicy is set to RemoteSigned to execute the script.
 
 Here is a screenshot:
 
