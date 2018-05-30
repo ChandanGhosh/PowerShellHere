@@ -1,6 +1,7 @@
-﻿# powershell here.
+# powershell here.
 # powershell path
-$pspath= "$PSHOME\powershell.exe -NoExit"
+$psprompt = "function prompt {'[PS] '}"
+$pspath= "$PSHOME\powershell.exe -NoExit $psprompt"
 
 # for right clicking on folders
 New-Item HKLM:\SOFTWARE\Classes\Directory\shell\PSOpenHere -force 
@@ -22,7 +23,7 @@ Set-item HKLM:\SOFTWARE\Classes\Directory\Background\shell\PSOpenHere\command "$
 
 # for right clicking on the background as an administrator in drives, folders
 $menu = 'Open PowerShell(As Administrator) Here'
-$command = "$PSHOME\powershell.exe -NoExit -NoProfile -Command ""Set-Location '%V'"""
+$command = "$PSHOME\powershell.exe -NoExit -NoProfile -Command ""Set-Location '%V'; $psprompt"""
  
 'directory', 'directory\background', 'drive' | ForEach-Object {
     New-Item -Path "Registry::HKEY_CLASSES_ROOT\$_\shell" -Name runas\command -Force |
