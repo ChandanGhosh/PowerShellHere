@@ -1,6 +1,6 @@
 # powershell here.
 # powershell path
-$psprompt = "function prompt {'[PS] '}"
+$psprompt = "function prompt {$p = Split-Path -leaf -path (Get-Location); "[$p] "}"
 $pspath= "$PSHOME\powershell.exe -NoExit $psprompt"
 
 # for right clicking on folders
